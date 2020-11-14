@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+#left{
+    width: 50%;
+    height: 100vh;
+    background: #71a0ff;
+}
+
+#right{
+    width: 50%;
+    height: 100vh;
+    background: #ff8383;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+#nav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+
+}
+
+#nav #logo{
+    width: 50%;
+    height: 100%;
+    padding-left: 10%;
+}
+
+#nav #logo h1{
+    line-height: 80px;
+    text-transform: uppercase;
+    color: #ff8383;
+    opacity: 0;
+    transform: translateX(-15px);
+    transition: 0.5s;
+}
+
+#nav #loginsignup{
+    width: 50%;
+    height: 100%;
+    padding-left: 20%;
+}
+
+#nav #loginsignup ul{
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20%;  
+}
+
+#nav #loginsignup ul li{
+    line-height: 80px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transform: border-bottom 0.2s;
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#nav #loginsignup ul li:nth-child(1){
+    transition-delay: 0;
+}
+
+#nav #loginsignup ul li:nth-child(2){
+    transition-delay: 0.2s;
+}
+
+#nav #loginsignup ul li:hover,
+#nav #loginsignup ul li:active {
+    border-bottom: 2px solid #71a0ff;
+
+}
+
+#nav #loginsignup ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+#content{
+    position: absolute;
+    top: 300px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+#content h1{
+    font-size: 65px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 4px;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#content p{
+    font-size: 25px;
+    color: #fff;
+    letter-spacing: 1px;
+    padding-top: 25px;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: 0.5s;
+    transition-delay: 0.2s;
+}
+
+#content button{
+    font-size: 20px;
+    margin-top: 40px;
+    width: 190px;
+    height: 50px;
+    border: 0;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 15px 15px 20px #8b8b8b;
+    transition: box-shadow 0.1s;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: 0.5s;
+    transition-delay: 0.4s;
+}
+
+#content button:hover{
+    box-shadow: 5px 5px 15px #aaa;
+}
+
+#content button a{
+    color: #000;
+    text-decoration: none;
+}
+
+@keyframes animate{
+    0%{
+        margin-left: 0;
+    }
+    40%{
+        margin-left: 35%;
+    }
+    100%{
+        margin-left: 100%;
+    }
+}
+#left-side, #right-side{
+    margin-left: 100%;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    animation-name: animate;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+
+}

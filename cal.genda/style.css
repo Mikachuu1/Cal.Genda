@@ -1,0 +1,658 @@
+/* COLORS USED:
+
+  #2C2F33 #ffffff #7289DA #000000 #71A0FF #FF8383
+
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html{
+    font-size: 70%;
+}
+
+body{
+    background: #dfecff;
+}
+
+li, a{
+    font-size: 16px;
+    text-decoration: none;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dfecff;
+}
+
+.container {
+    width: 100%;
+    height: 65px;
+    margin: 0 auto;
+}
+
+/*menu-btn toggle*/
+
+.sidemenu{
+    z-index: 1;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient( #71a0ff, #dfecff);
+    margin-left: -250px;
+    transition: 0.5s;
+}
+
+.sidemenu ul{
+    list-style: none;
+    padding: 0;
+    margin-top: 45px;
+    margin-left: 45px;
+}
+
+.sidemenu a{
+    text-decoration: none;
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+}
+
+.expand{
+    transition: 0.5s;
+    position: fixed;
+}
+
+/*burger btn*/
+
+.menu-btn{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    float: left;
+    margin-left: 10px;
+    /*border: 3px solid #fff;*/
+}
+
+.menu-btn_burger{
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+    transition: all .5s ease-in-out;
+
+}
+
+.menu-btn_burger::before,
+.menu-btn_burger::after{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn_burger::before{
+    transform: translateY(-9px);
+}
+
+.menu-btn_burger::after{
+    transform: translateY(9px);
+}
+
+/* Animation for btn */
+
+.menu-btn.open .menu-btn_burger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+
+.menu-btn.open .menu-btn_burger::before{
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn_burger::after{
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+/*--------------------------------------------------------*/
+
+.logo{
+    width: 13%;
+    height: auto;
+    float: left;
+    padding: 19px 0;
+    margin-left: 30px;
+}
+
+.search-box{
+    float: left;
+    background: #fff;
+    height: 35px;
+    border-radius: 35px;
+    margin-top: 17px;
+    margin-left: 25px;
+}
+
+.search-box:hover > .search-txt{
+    width: 240px;
+    padding: 0 6px;
+}
+
+.search-box:hover > .search-btn{
+    background: #fff;
+}
+
+.search-btn{
+    color: #000;
+    float: right;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #ff8383;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.search-txt{
+    border: none;
+    background: none;
+    outline: none;
+    float: right;
+    padding: 0;
+    color: #000;
+    font-size: 18px;
+    transition: 0.4s;
+    line-height: 35px;
+    width: 0px;
+}
+
+.create button{
+    float: right;
+    background: #ff8383;
+    height: 35px;
+    border-radius: 35px;
+    margin-top: 17px;
+    margin-right: 25px;
+    border: 0;
+    font-size: 18px;
+    width: 110px;
+    box-shadow: 15px 15px 20px #8b8b8b;
+    transition: box-shadow 0.5s;
+
+}
+
+.create button:hover{
+    box-shadow: 5px 5px 15px #aaa;
+}
+.create button a{
+    color: #000;
+    text-decoration: none;
+    padding: 0;
+    font-size: 18px;
+    line-height: 35px;
+    font-weight: 700;
+}
+
+.create button i{
+    color: #000;
+    float: right;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.navright img{
+    width: 30px;
+}
+
+.navright{
+    display: flex;
+    float: right;
+}
+
+.navright .icon_wrap{
+    cursor: pointer;
+}
+
+.navright .notifications{
+    margin-right: 25px;
+    height: 65px;
+}
+
+.navright .notifications .icon_wrap{
+    font-size: 30px;
+    margin-top: 16px;
+}
+
+.navright .notifications,
+.navright .profile{
+    position: relative;
+}
+
+.notifcation_bar{
+    z-index: 1;
+    position: absolute;
+    top: 65px;
+    right: -15px;
+    background: #fff;
+    width: 300px;
+    height: auto;
+    border: 1px solid #c7d8e2;
+    border-radius: 3px;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.125),
+    -10px -10px 30px rgba(0,0,0,0.125);
+}
+
+.notifcation_bar:before{
+    content:"";
+    position: absolute;
+    top: -20px;
+    right: 15px;
+    border: 10px solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+.notifcation_bar li .notify_icon{
+    display: flex;
+}
+
+.notifcation_bar li{
+    border-bottom: 1px solid #f1f2f4;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.notifcation_bar li .notify_data{
+    margin-right: 100px;
+    width: 185px;
+}
+
+.notifcation_bar li .notify_data .title{
+    color: #000;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.notifcation_bar li .notify_data .date{
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 5px;
+}
+
+
+.navright{
+    float: right;
+}
+
+.navright ul{
+    list-style: none;
+}
+
+.navright li{
+    display: inline-block;
+    padding-top: 25px;
+    margin-right: 40px;
+}
+
+nav a {
+    font-size: 15px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+/*AGENDA AND CALENDAR*/
+
+.calgenda-container{
+    position: relative;
+    margin: auto;
+    right: 0;
+    left: 0;
+    top: 0; 
+    bottom: 0;
+        
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.left-side, .right-side{
+    padding: 30px;
+    height: 100%;
+}
+
+/* left-side agenda part */
+
+.left-side{
+    width: 35%;
+    color: #ffffff;
+    background-color: #ff8383;
+    float: left;
+}
+
+.title{
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+}
+
+.title h1{
+    font-size: 40px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.title p{
+    font-size: 25px;
+}
+
+.to-do-list h2{
+    font-size: 20px;
+}
+
+ul {
+    margin: 30px;
+    padding: 0;
+    list-style-type: none;
+}
+
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 16px 8px 16px 40px;
+    background: #ff8383;
+    font-size: 16px;
+    transition: 0.2s;
+  
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+    background: #ffa2a2;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+    background: #71a0ff;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+    background: #71a0ff;
+    color: #fff;
+    text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 15px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+
+/* Style the close button */
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 16px 20px 16px 20px;
+}
+
+.close:hover {
+    background-color: #ff8383;
+    color: white;
+}
+
+/* Style the header */
+.header {
+    color: white;
+    text-align: center;
+}
+  
+/* Clear floats after the header */
+.header:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+/* Style the input */
+input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+}
+  
+  /* Style the "Add" button */
+  .addBtn {
+    padding: 10px;
+    width: 25%;
+    background: #ffa2a2;
+    color: #fff;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+  }
+  
+  .addBtn:hover {
+    background-color: rgb(255, 182, 182);
+  }
+  
+
+.to-do-list{
+    width: 100%;
+    height: 670px;
+    padding: 10px;
+    padding-top: 20px;
+    font-size: 18px;    
+}
+
+.to-do-list ul{
+    padding-left: 50px;
+    padding-top: 15px;
+    list-style: none;
+    font-size: 15px;
+    
+}
+*/
+
+    li:before {
+        content: "-";
+        position: absolute;
+        left: 60px;
+    }
+
+.add-event-day {
+    border-bottom: 2px solid #ffffff;
+    
+}
+    
+.add-event-day-field {
+    border: none;
+    background: transparent;
+    height: 30px;
+    font-size: 15px;
+}
+
+.add-event-day-field:focus {
+    outline: none;
+}
+
+.add-event-day-field::placeholder {
+    color: #ffffff;
+}
+
+.add-event-day-field-btn {
+    padding-top: 10px; 
+    float: right;
+    font-size: 15px;
+}
+
+/* right-side calendar part */
+
+
+.right-side{
+    width: 65%;
+    color: #ffffff;
+    background: #71A0FF;
+    float: right;
+}
+
+
+.month{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+}
+
+.month i{
+    font-size: 30px;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.month h1{
+    font-size: 40px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.month p{
+    font-size: 25px;
+}
+
+.weekdays{
+    width: 100%;
+    height: 50px;
+    padding: 0 1px;
+    display: flex;
+    align-items: center;
+}
+
+.weekdays div{
+    font-size: 20px;
+    font-weight: 350;
+    letter-spacing: 1px;
+    width: calc(100% /7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.days{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2px;
+}
+
+.days div{
+    font-size: 20px;
+    width: calc(100% /7);
+    height: 108px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.days div:hover:not(.today){
+    background-color: #7289DA;
+    border: 3px solid #FFFFFF;
+    cursor: pointer;
+}
+
+.prev-date,
+.next-date{
+    opacity: 0.5;
+}
+
+.today{
+    background-color: #FF8383;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
