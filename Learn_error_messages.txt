@@ -24,7 +24,7 @@ PDOStatement->execute(Array) #1 C:\xampp\htdocs\LoginSignUp\signup.php(22): User
 4) wheh do we need to check
 if(isset($_POST['signup-btn'])){
 
-    I removed from signup_akash.php. Use now signup.php that uses PDO and users-class.
+    Use now signup.php that uses PDO and users-class.
 
 5) VS Code
 Bracket Pair Colorizer 2
